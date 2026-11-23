@@ -13,13 +13,13 @@ export default function CompaniesPage() {
     <>
       <PageHeader
         title="شرکت‌ها"
-        lead="صفحهٔ اعتماد هر شرکت شرکت‌کننده: سند حریم خصوصی نسخه‌دار، سطح فعلی، تاریخ انقضا و تاریخچهٔ تغییرات."
+        lead="هر شرکتی که به IOP بپیوندد اینجا صفحه‌ای دارد: سند حریم خصوصی‌اش با همهٔ نسخه‌ها، سطحی که گرفته و تاریخ انقضای آن."
       />
       <div className="container-page py-12">
         {real.length === 0 && (
           <div className="mb-10 rounded-xl border border-amber-300 bg-amber-50 p-6 leading-8 text-amber-950">
-            هنوز هیچ شرکتی در IOP ثبت نشده و تا پایان نظرخواهی عمومی هیچ سطحی صادر نمی‌شود. اگر شرکت شما می‌خواهد
-            شرکت‌کنندهٔ آزمایشی باشد،{' '}
+            هنوز هیچ شرکتی به IOP نپیوسته و تا نظرخواهی عمومی تمام نشود، سطحی هم داده نمی‌شود. اگر می‌خواهید شرکتتان
+            یکی از سه شرکت آزمایشی باشد،{' '}
             <a
               href={`${REPO_URL}/issues/new?template=company-application.yml`}
               className="font-medium text-accent hover:underline"
@@ -28,7 +28,7 @@ export default function CompaniesPage() {
             >
               درخواست بدهید
             </a>
-            .
+            . بررسی این سه شرکت رایگان است.
           </div>
         )}
         <ul className="grid gap-4 md:grid-cols-2">
@@ -49,7 +49,7 @@ export default function CompaniesPage() {
           ))}
         </ul>
         <p className="mt-10 text-sm text-neutral-500">
-          قالب سند و قواعد نسخه‌گذاری: <Link href="/privacy-documents/" className="text-accent hover:underline">سند حریم خصوصی</Link> ·{' '}
+          قالب سند و قواعد نسخه‌ها: <Link href="/privacy-documents/" className="text-accent hover:underline">سند حریم خصوصی</Link> ·{' '}
           <Link href="/trust-page/" className="text-accent hover:underline">صفحهٔ اعتماد</Link>
         </p>
       </div>

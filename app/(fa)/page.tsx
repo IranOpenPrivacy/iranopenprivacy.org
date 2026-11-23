@@ -12,36 +12,36 @@ const LEVELS = [
     n: '۱',
     name: 'اظهارشده',
     en: 'Declared',
-    what: 'شرکت چک‌لیست را علناً اظهار کرده و شواهد عمومی آن به‌صورت خودکار بررسی شده است.',
-    who: 'ابزار خودکار، بدون قضاوت انسانی',
-    when: 'بررسی ماهانه، انقضا پس از ۱۲ ماه',
+    what: 'شرکت علناً اعلام کرده کنترل‌های سطح ۱ را رعایت می‌کند و ابزار خودکار آنچه را از بیرون دیدنی است با این ادعا مقایسه کرده.',
+    who: 'ابزار خودکار، بدون داوری انسانی',
+    when: 'بررسی هر ماه، اعتبار ۱۲ ماهه',
   },
   {
     n: '۲',
     name: 'تأییدشده',
     en: 'Verified',
-    what: 'شواهد واقعی (سیاست‌ها، جریان داده، پیکربندی) در یک زمان مشخص بازبینی شده است.',
-    who: 'دو بازبین جامعه و تأیید یک نگهدارنده',
+    what: 'دو بازبین مستقل شواهد واقعی شرکت را دیده‌اند: سیاست‌های داخلی، مسیر داده‌ها و پیکربندی سامانه‌ها.',
+    who: 'دو بازبین که تصادفی انتخاب می‌شوند و یک نگهدارنده',
     when: 'هر ۱۲ ماه، با گزارش عمومی',
   },
   {
     n: '۳',
     name: 'تأیید مستمر',
     en: 'Continuously Verified',
-    what: 'کنترل‌های تأییدشده در طول زمان هم برقرار می‌مانند.',
-    who: 'ممیز پولی معتبر و بررسی‌های دوره‌ای IOP',
+    what: 'کنترل‌ها فقط یک‌بار بررسی نمی‌شوند؛ در طول سال هم پایش می‌شوند.',
+    who: 'ممیز حرفه‌ای و بررسی‌های دوره‌ای IOP',
     when: 'فعلاً ارائه نمی‌شود',
     muted: true,
   },
 ]
 
 const ROLES = [
-  { who: 'کاربر یا علاقه‌مند', what: 'نظر دادن روی پیش‌نویس استاندارد', href: `${REPO_URL}/issues/new/choose`, cta: 'ثبت نظر' },
-  { who: 'صاحب یا مدیر یک شرکت', what: 'شرکت‌کنندهٔ آزمایشی شدن (ماه‌های اول رایگان)', href: `${REPO_URL}/issues/new?template=company-application.yml`, cta: 'درخواست شرکت' },
-  { who: 'متخصص امنیت یا حریم خصوصی', what: 'بازبین شدن، با نام مستعار هم ممکن است', href: `${REPO_URL}/issues/new?template=reviewer-application.yml`, cta: 'درخواست بازبین' },
-  { who: 'وکیل حوزهٔ فناوری', what: 'بازبینی حقوقی حوزهٔ «زمینهٔ محلی»', href: '/contact/', cta: 'تماس' },
-  { who: 'توسعه‌دهنده', what: 'ابزار بررسی خودکار و تولیدکنندهٔ صفحه', href: '/contribute/', cta: 'راهنمای مشارکت' },
-  { who: 'مترجم', what: 'ترجمه و بازبینی متن فارسی و انگلیسی', href: '/contribute/', cta: 'راهنمای مشارکت' },
+  { who: 'کاربر یا علاقه‌مند', what: 'پیش‌نویس را بخوانید و بگویید کجایش مبهم یا ناقص است', href: `${REPO_URL}/issues/new/choose`, cta: 'ثبت نظر' },
+  { who: 'مدیر یا مالک یک شرکت', what: 'جزو سه شرکت آزمایشی باشید؛ بررسی این سه رایگان است', href: `${REPO_URL}/issues/new?template=company-application.yml`, cta: 'درخواست شرکت' },
+  { who: 'متخصص امنیت یا حریم خصوصی', what: 'بازبین شوید، حتی با نام مستعار', href: `${REPO_URL}/issues/new?template=reviewer-application.yml`, cta: 'درخواست بازبین' },
+  { who: 'وکیل حوزهٔ فناوری', what: 'حوزهٔ «زمینهٔ محلی» هنوز بازبینی حقوقی نشده و به کمک شما نیاز دارد', href: '/contact/', cta: 'تماس' },
+  { who: 'برنامه‌نویس', what: 'ابزار بررسی خودکار هنوز ساخته نشده؛ از مشخصاتش شروع کنید', href: '/contribute/', cta: 'راهنمای مشارکت' },
+  { who: 'مترجم یا ویراستار', what: 'متن فارسی و انگلیسی باید هم‌معنا و روان بمانند', href: '/contribute/', cta: 'راهنمای مشارکت' },
 ]
 
 export default function Home() {
@@ -52,26 +52,26 @@ export default function Home() {
         <div className="container-page grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.25fr_1fr]">
           <div>
             <p className="mb-6 inline-flex rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-sm text-amber-900">
-              پیش‌نویس ۰٫۱، در حال نظرخواهی عمومی. هنوز به هیچ شرکتی سطحی داده نشده است.
+              پیش‌نویس ۰٫۱ برای نظرخواهی عمومی منتشر شده. هنوز به هیچ شرکتی سطحی داده نشده است.
             </p>
             <h1 className="text-4xl font-extrabold leading-[1.35] text-neutral-950 sm:text-5xl">
-              حریم خصوصی، <span className="text-accent">قابل بررسی</span>
+              حریم خصوصی، <span className="text-accent">با شواهد</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-9 text-neutral-600">
-              ایران اوپن پرایوسی (IOP) استانداردی باز، جامعه‌محور و غیرانتفاعی برای محصولات دیجیتال ایرانی است. ادعای شرکت‌ها
-              دربارهٔ دادهٔ کاربران را با چک‌لیست عمومی، سند نسخه‌دار و شواهد قابل بررسی می‌کند.
+              ایران اوپن پرایوسی (IOP) استانداردی باز و غیرانتفاعی برای محصولات دیجیتال ایرانی است که جامعه‌ای داوطلب آن
+              را می‌نویسد. با آن می‌شود سنجید شرکتی که می‌گوید از دادهٔ کاربرانش مراقبت می‌کند، واقعاً چه کرده است.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/standard/" className="btn-primary">دیدن استاندارد</Link>
-              <Link href="/contribute/" className="btn-ghost">مشارکت در پروژه</Link>
+              <Link href="/standard/" className="btn-primary">استاندارد را ببینید</Link>
+              <Link href="/contribute/" className="btn-ghost">همراه ما شوید</Link>
             </div>
           </div>
           <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200">
             {[
               [fa(c.total), 'کنترل قابل بررسی'],
               ['۹', 'حوزه'],
-              ['۳', 'سطح، بر اساس آنچه اثبات شده'],
-              [fa(c.auto), 'کنترل با بررسی خودکار'],
+              ['۳', 'سطح راستی‌آزمایی'],
+              [fa(c.auto), 'کنترل که ابزار خودکار می‌سنجد'],
             ].map(([v, l]) => (
               <div key={l} className="bg-white p-6">
                 <dt className="sr-only">{l}</dt>
@@ -86,15 +86,15 @@ export default function Home() {
       <section className="container-page py-20">
         <h2 className="text-2xl font-bold text-neutral-950 sm:text-3xl">چرا این پروژه؟</h2>
         <p className="mt-4 max-w-3xl text-lg leading-9 text-neutral-600">
-          کاربر ایرانی برای اعتماد به یک اپ یا سرویس اغلب فقط یک متن بی‌پشتوانه در صفحهٔ «قوانین و مقررات» می‌بیند. راهی ندارد
-          بررسی کند شرکت واقعاً چه داده‌ای نگه می‌دارد، با چه کسانی به اشتراک می‌گذارد و چه زمانی حذف می‌کند. IOP سه چیز را
-          عمومی منتشر می‌کند:
+          وقتی اپی را نصب می‌کنید، تنها چیزی که دربارهٔ داده‌هایتان می‌بینید معمولاً متنی است در صفحهٔ «قوانین و مقررات».
+          نمی‌دانید آن متن کی عوض شده، و راهی ندارید بفهمید شرکت واقعاً چه چیزی نگه می‌دارد، به چه کسی می‌دهد و کی پاک
+          می‌کند. IOP می‌خواهد این را عوض کند. برای همین سه چیز را عمومی منتشر می‌کنیم:
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
-            ['یک استاندارد باز', 'چک‌لیست ماشین‌خوان حریم خصوصی، منطبق با GDPR، ISO 27701 و OWASP ASVS و تطبیق‌یافته با شرایط ایران.', '/standard/'],
-            ['راستی‌آزمایی در سه سطح', 'هر سطح دقیقاً می‌گوید چه چیزی اثبات شده، چه کسی اثبات کرده و هر چند وقت یک‌بار.', '/process/'],
-            ['سند نسخه‌دار و صفحهٔ اعتماد', 'سند حریم خصوصی هر شرکت با تاریخچهٔ کامل و شواهد قابل بررسی، روی یک صفحهٔ عمومی.', '/privacy-documents/'],
+            ['استانداردی باز', 'فهرستی از کنترل‌های قابل بررسی که بر پایهٔ GDPR، ISO 27701 و OWASP ASVS نوشته شده و هر جا لازم بوده با شرایط ایران تطبیق داده شده.', '/standard/'],
+            ['سه سطح راستی‌آزمایی', 'هر سطح روشن می‌گوید چه چیزی را چه کسی بررسی کرده و این بررسی هر چند وقت تکرار می‌شود.', '/process/'],
+            ['سند نسخه‌دار و صفحهٔ اعتماد', 'سند حریم خصوصی هر شرکت با همهٔ نسخه‌های قبلی‌اش، روی صفحه‌ای که هر کسی می‌تواند ببیند.', '/privacy-documents/'],
           ].map(([t, d, href], i) => (
             <Link key={t} href={href} className="group rounded-xl border border-neutral-200 p-6 transition-colors hover:border-accent">
               <span className="font-mono text-sm text-accent">{fa(i + 1)}</span>
@@ -106,7 +106,7 @@ export default function Home() {
         <blockquote className="mt-14 border-s-4 border-accent ps-5 text-xl font-medium leading-9 text-neutral-900">
           «نشان بدون شواهد، نمایش است.»
           <span className="mt-1 block text-base font-normal text-neutral-500">
-            هیچ نشانی در IOP بدون پیوند به شواهد و تاریخ انقضا منتشر نمی‌شود.
+            برای همین هیچ نشانی از IOP بدون پیوند به شواهد و بدون تاریخ انقضا منتشر نمی‌شود.
           </span>
         </blockquote>
       </section>
@@ -117,7 +117,7 @@ export default function Home() {
             <div>
               <h2 className="text-2xl font-bold text-neutral-950 sm:text-3xl">سه سطح</h2>
               <p className="mt-3 max-w-2xl leading-8 text-neutral-600">
-                سطح‌ها بر اساس «چه چیزی اثبات شده» نام‌گذاری شده‌اند، نه با مدال. سطح ۱ هرگز «گواهی» نامیده نمی‌شود.
+                نام هر سطح می‌گوید چه چیزی ثابت شده، نه اینکه شرکت چه مدالی گرفته. به همین دلیل سطح ۱ را هیچ‌وقت «گواهی» نمی‌نامیم.
               </p>
             </div>
             <Link href="/levels/" className="text-accent hover:underline">جزئیات سطح‌ها ←</Link>
@@ -132,7 +132,7 @@ export default function Home() {
                 <h3 className={`mt-2 text-2xl font-bold ${l.muted ? 'text-neutral-500' : 'text-neutral-950'}`}>{l.name}</h3>
                 <p className="mt-3 leading-8 text-neutral-700">{l.what}</p>
                 <dl className="mt-5 space-y-2 border-t border-neutral-100 pt-4 text-sm">
-                  <div className="flex gap-2"><dt className="text-neutral-500">بررسی:</dt><dd className="text-neutral-800">{l.who}</dd></div>
+                  <div className="flex gap-2"><dt className="text-neutral-500">بررسی‌کننده:</dt><dd className="text-neutral-800">{l.who}</dd></div>
                   <div className="flex gap-2"><dt className="text-neutral-500">تناوب:</dt><dd className="text-neutral-800">{l.when}</dd></div>
                 </dl>
               </div>
@@ -145,10 +145,10 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-neutral-950 sm:text-3xl">چطور کار می‌کند؟</h2>
         <ol className="mt-10 grid gap-6 md:grid-cols-4">
           {[
-            ['سند', 'شرکت سند حریم خصوصی خود را در قالب IOP می‌نویسد و مالکیت دامنه‌اش را ثابت می‌کند.'],
-            ['نسخه', 'IOP سند را با شناسهٔ پایدار منتشر می‌کند. هر ویرایش یک نسخهٔ جدید و دائمی است.'],
-            ['شواهد', 'شواهد بررسی می‌شود: خودکار برای سطح ۱، با بازبین انسانی برای سطح ۲.'],
-            ['صفحهٔ اعتماد', 'صفحهٔ اعتماد عمومی و گواهی امضاشده برای همان نسخهٔ سند منتشر می‌شود.'],
+            ['سند', 'شرکت سند حریم خصوصی‌اش را در قالب IOP می‌نویسد و نشان می‌دهد صاحب دامنهٔ سایتش است.'],
+            ['نسخه', 'سند در نشانی ثابتی منتشر می‌شود. هر ویرایش نسخهٔ تازه‌ای می‌سازد و نسخه‌های قبلی پاک نمی‌شوند.'],
+            ['شواهد', 'در سطح ۱ ابزار خودکار شواهد عمومی را می‌سنجد. در سطح ۲ دو بازبین شواهد واقعی را می‌بینند.'],
+            ['صفحهٔ اعتماد', 'نتیجه روی صفحهٔ اعتماد شرکت می‌آید، با گواهی امضاشده‌ای که به همان نسخهٔ سند اشاره می‌کند.'],
           ].map(([t, d], i) => (
             <li key={t} className="relative rounded-xl border border-neutral-200 p-6">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">{fa(i + 1)}</span>
@@ -158,7 +158,7 @@ export default function Home() {
           ))}
         </ol>
         <p className="mt-8 leading-8 text-neutral-600">
-          تغییر عمده در رویهٔ داده، سطح را تا بازبینی دوباره به «تغییر کرده از زمان تأیید» تبدیل می‌کند.{' '}
+          اگر شرکت بعداً رویهٔ داده‌اش را به‌طور جدی عوض کند، کنار سطحش «تغییر کرده از زمان تأیید» می‌آید تا دوباره بررسی شود.{' '}
           <Link href="/process/" className="text-accent hover:underline">فرایند راستی‌آزمایی</Link>
         </p>
       </section>
@@ -167,7 +167,7 @@ export default function Home() {
         <div className="container-page py-20">
           <h2 className="text-2xl font-bold sm:text-3xl">چطور مشارکت کنم؟</h2>
           <p className="mt-3 max-w-2xl leading-8 text-neutral-300">
-            بازبین‌ها و مشارکت‌کنندگان می‌توانند با نام مستعار فعالیت کنند. هویت واقعی فقط نزد نگهدارنده‌هاست.{' '}
+            لازم نیست با نام واقعی بیایید. بازبین‌ها و مشارکت‌کنندگان می‌توانند با نام مستعار کار کنند و هویت واقعی‌شان فقط نزد نگهدارنده‌ها می‌ماند.{' '}
             <Link href="/safety/" className="text-white underline underline-offset-4">ایمنی مشارکت‌کنندگان</Link>
           </p>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -192,13 +192,13 @@ export default function Home() {
       </section>
 
       <section className="container-page py-20">
-        <h2 className="text-2xl font-bold text-neutral-950 sm:text-3xl">چه نیستیم</h2>
+        <h2 className="text-2xl font-bold text-neutral-950 sm:text-3xl">IOP چه چیزی نیست</h2>
         <ul className="mt-8 grid gap-6 md:grid-cols-2">
           {[
-            ['قانون نیستیم', 'و نهادی دولتی هم نیستیم. IOP از هر دولت و از هر شرکتی که بررسی می‌کند مستقل است.'],
-            ['مشاور حقوقی نیستیم', 'هیچ‌چیز در این سایت و مخزن مشاورهٔ حقوقی نیست.'],
-            ['فروشندهٔ امنیت نیستیم', 'خدمات امنیتی، در صورت لزوم، پروژه‌ای جدا با نامی جدا خواهد بود.'],
-            ['نشان‌فروش نیستیم', 'هزینهٔ گواهی صرفاً بابت کار راستی‌آزمایی است، نه بابت نتیجه.'],
+            ['نهاد دولتی یا قانون‌گذار نیست', 'IOP از هر دولت و از هر شرکتی که بررسی می‌کند مستقل است و دنبال مجوز رسمی هم نیست.'],
+            ['مشاور حقوقی نیست', 'سطحی که IOP می‌دهد نمی‌گوید شرکت «قانونی» کار می‌کند. هیچ چیز در این سایت مشاورهٔ حقوقی نیست.'],
+            ['شرکت امنیتی نیست', 'تست نفوذ و خدمات امنیتی کار ما نیست. اگر روزی لازم شد، پروژه‌ای جدا با نامی دیگر خواهد بود.'],
+            ['نشان نمی‌فروشد', 'هزینهٔ بررسی، وقتی دریافت شود، بابت کار بازبین‌هاست و به نتیجه ربطی ندارد.'],
           ].map(([t, d]) => (
             <li key={t} className="border-s-2 border-neutral-200 ps-4">
               <h3 className="font-bold text-neutral-950">{t}</h3>
@@ -207,7 +207,7 @@ export default function Home() {
           ))}
         </ul>
         <p className="mt-12 text-neutral-600">
-          نسخهٔ فعلی پیش‌نویس ۰٫۱ است (آذر ۱۴۰۵). حوزهٔ ۹ (زمینهٔ محلی) هنوز بازبینی حقوقی نشده.{' '}
+          نسخهٔ فعلی پیش‌نویس ۰٫۱ است (آذر ۱۴۰۵). حوزهٔ ۹، یعنی «زمینهٔ محلی»، هنوز بازبینی حقوقی نشده است.{' '}
           <Link href="/roadmap/" className="text-accent hover:underline">نقشهٔ راه</Link>
         </p>
       </section>

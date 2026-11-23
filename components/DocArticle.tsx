@@ -32,9 +32,9 @@ export default function DocArticle({
         <article className="doc mx-auto max-w-3xl" dangerouslySetInnerHTML={{ __html: html }} />
         {file && (
           <p className="mx-auto mt-14 max-w-3xl border-t border-neutral-200 pt-6 text-sm text-neutral-500">
-            {lang === 'fa' ? 'این صفحه از مخزن باز IOP ساخته می‌شود. ' : 'This page is built from the open IOP repository. '}
+            {lang === 'fa' ? 'این صفحه از مخزن عمومی IOP ساخته می‌شود. ' : 'This page is built from the open IOP repository. '}
             <a href={repoFileUrl(file)} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
-              {lang === 'fa' ? 'مشاهده و پیشنهاد ویرایش در گیت‌هاب' : 'View or suggest an edit on GitHub'}
+              {lang === 'fa' ? 'اگر جایی را باید اصلاح کرد، در گیت‌هاب پیشنهاد بدهید' : 'View or suggest an edit on GitHub'}
             </a>
           </p>
         )}

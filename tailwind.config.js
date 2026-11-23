@@ -7,7 +7,7 @@ module.exports = {
         accent: { DEFAULT: '#276EF6', soft: '#EAF1FE', ink: '#1B4FB4' },
       },
       fontFamily: {
-        sans: ['"Vazirmatn Variable"', 'Vazirmatn', 'Tahoma', 'system-ui', 'sans-serif'],
+        sans: ['"Dastkhat Bar"', 'Tahoma', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -5,7 +5,7 @@ import { DOC_PAGES, renderDoc } from '@/lib/content'
 
 export const metadata: Metadata = { title: 'همهٔ اسناد', alternates: { canonical: '/docs/' } }
 
-const GROUPS = { standard: 'استاندارد', project: 'پروژه و حاکمیت', policy: 'مشارکت و سیاست‌ها' } as const
+const GROUPS = { standard: 'استاندارد', project: 'پروژه و اداره‌اش', policy: 'مشارکت و قواعد' } as const
 
 export default async function DocsIndex() {
   const docs = await Promise.all(
@@ -14,7 +14,7 @@ export default async function DocsIndex() {
   const extra = { standard: [{ slug: 'standard', title: 'جدول کنترل‌ها', file: 'checklist/*.yaml' }] } as Record<string, any[]>
   return (
     <>
-      <PageHeader title="همهٔ اسناد" lead="هر صفحه مستقیم از مخزن باز IOP ساخته می‌شود. متن فارسی مرجع است." />
+      <PageHeader title="همهٔ اسناد" lead="همهٔ این صفحه‌ها مستقیم از مخزن عمومی IOP ساخته می‌شوند. اگر متن فارسی و انگلیسی با هم فرق داشت، فارسی ملاک است." />
       <div className="container-page grid gap-10 py-12 md:grid-cols-3">
         {(Object.keys(GROUPS) as (keyof typeof GROUPS)[]).map((g) => (
           <section key={g}>

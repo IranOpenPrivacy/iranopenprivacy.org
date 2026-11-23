@@ -19,7 +19,7 @@ const COLS_FA = [
   {
     title: 'پروژه',
     links: [
-      ['/governance/', 'حاکمیت'],
+      ['/governance/', 'اداره و تصمیم‌گیری'],
       ['/conflict-of-interest/', 'تعارض منافع'],
       ['/funding/', 'تأمین مالی'],
       ['/roadmap/', 'نقشهٔ راه'],
@@ -67,7 +67,7 @@ export default function SiteFooter({ lang }: { lang: 'fa' | 'en' }) {
             <LogoMark className="h-6 w-6" /> ایران اوپن پرایوسی
           </div>
           <p className="mt-3 text-sm leading-7 text-neutral-600">
-            استاندارد باز و بی‌طرف حریم خصوصی برای محصولات دیجیتال ایرانی. مستقل از هر دولت و از هر شرکتی که بررسی می‌کنیم.
+            استانداردی باز و بی‌طرف برای حریم خصوصی در محصولات دیجیتال ایرانی. از هر دولت و از هر شرکتی که بررسی می‌کنیم مستقلیم.
           </p>
           <p className="mt-4 text-sm">
             <a href={REPO_URL} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
@@ -92,7 +92,7 @@ export default function SiteFooter({ lang }: { lang: 'fa' | 'en' }) {
       </div>
       <div className="border-t border-neutral-200">
         <p className="container-page py-5 text-xs leading-6 text-neutral-500">
-          متن استاندارد و مستندات با مجوز CC BY-SA 4.0 و کد با مجوز AGPL-3.0 منتشر شده است. این سایت مشاورهٔ حقوقی نیست.
+          متن استاندارد و مستندات با مجوز CC BY-SA 4.0 و کد با مجوز AGPL-3.0 منتشر می‌شود. مطالب این سایت مشاورهٔ حقوقی نیست.
         </p>
       </div>
     </footer>

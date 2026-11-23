@@ -6,16 +6,16 @@ import { REPO_URL } from '@/lib/content'
 export const metadata: Metadata = { title: 'تماس', alternates: { canonical: '/contact/' } }
 
 const ITEMS = [
-  { t: 'ایمیل عمومی', d: 'پرسش، پیشنهاد، همکاری حقوقی یا رسانه‌ای.', v: 'contact@iranopenprivacy.org', href: 'mailto:contact@iranopenprivacy.org', ltr: true },
-  { t: 'گزارش مشکل امنیتی', d: 'دربارهٔ خود پروژه یا این سایت. پیش از ارسال، سیاست امنیتی را بخوانید.', v: 'سیاست امنیتی', href: '/security/' },
-  { t: 'گفت‌وگوی عمومی', d: 'نظر روی پیش‌نویس، گزارش خطا در متن یا پیشنهاد تغییر.', v: 'Issueهای گیت‌هاب', href: `${REPO_URL}/issues/new/choose` },
-  { t: 'نام مستعار', d: 'برای مشارکت لازم نیست نام واقعی خود را اعلام کنید. در Issueهای عمومی نام واقعی ننویسید.', v: 'ایمنی مشارکت‌کنندگان', href: '/safety/' },
+  { t: 'ایمیل', d: 'برای پرسش، پیشنهاد یا همکاری حقوقی و رسانه‌ای.', v: 'contact@iranopenprivacy.org', href: 'mailto:contact@iranopenprivacy.org', ltr: true },
+  { t: 'گزارش مشکل امنیتی', d: 'اگر در این سایت یا ابزارهای IOP مشکل امنیتی دیده‌اید، اول سیاست امنیتی را بخوانید.', v: 'سیاست امنیتی', href: '/security/' },
+  { t: 'گفت‌وگوی عمومی', d: 'نظرتان دربارهٔ پیش‌نویس، خطایی که در متن دیده‌اید یا پیشنهاد تغییر را در گیت‌هاب بنویسید.', v: 'Issueهای گیت‌هاب', href: `${REPO_URL}/issues/new/choose` },
+  { t: 'نام مستعار', d: 'برای مشارکت لازم نیست نام واقعی‌تان را بگویید. در گفت‌وگوهای عمومی هم نام واقعی ننویسید.', v: 'ایمنی مشارکت‌کنندگان', href: '/safety/' },
 ]
 
 export default function ContactPage() {
   return (
     <>
-      <PageHeader title="تماس" lead="IOP فرم تماس یا ردیاب ندارد. از یکی از مسیرهای زیر استفاده کنید." />
+      <PageHeader title="تماس" lead="این سایت فرم تماس ندارد و رفتار شما را هم دنبال نمی‌کند. از یکی از این راه‌ها با ما در تماس باشید." />
       <div className="container-page py-12">
         <ul className="grid gap-4 md:grid-cols-2">
           {ITEMS.map((i) => {

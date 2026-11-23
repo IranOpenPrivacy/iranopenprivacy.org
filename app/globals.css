@@ -1,10 +1,20 @@
+/* Dastkhat Bar (SIL OFL 1.1, https://github.com/dastyar-io/dastkhat-font, v1.210). License: /fonts/Dastkhat-OFL.txt */
+@font-face {
+  font-family: 'Dastkhat Bar';
+  src: url('/fonts/DastkhatBar-Variable.woff2?v=1.210') format('woff2-variations'),
+       url('/fonts/DastkhatBar-Variable.woff2?v=1.210') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html { -webkit-text-size-adjust: 100%; }
-  body { @apply bg-white text-neutral-900 antialiased; font-feature-settings: "ss01"; }
+  body { @apply bg-white text-neutral-900 antialiased; }
   ::selection { @apply bg-accent-soft; }
   :focus-visible { @apply outline-2 outline-offset-2 outline-accent; }
 }
@@ -25,4 +35,9 @@
   .doc pre { @apply bg-neutral-900 text-neutral-100; direction: ltr; text-align: left; }
   [dir="rtl"] .doc blockquote { @apply border-s-4 border-l-0 ps-4; }
   [dir="rtl"] .doc :where(ul, ol) { @apply pe-0 ps-6; }
+}
+
+/* Persian numerals for ordered lists in Persian pages */
+@layer base {
+  [lang="fa"] ol { list-style-type: persian; }
 }

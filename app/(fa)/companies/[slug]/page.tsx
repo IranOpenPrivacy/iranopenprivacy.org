@@ -34,18 +34,18 @@ export default async function CompanyPage({ params }: { params: { slug: string }
         <div className="min-w-0">
           {c.fictional && (
             <p className="mb-8 rounded-lg border border-amber-300 bg-amber-50 p-4 text-amber-950">
-              این یک شرکت ساختگی است و فقط برای نمایش قالب صفحهٔ اعتماد و قواعد نسخه‌گذاری ساخته شده.
+              این شرکت واقعی نیست. آن را ساخته‌ایم تا نشان دهیم صفحهٔ اعتماد و نسخه‌های سند چه شکلی دارند.
             </p>
           )}
 
           {fm.data?.collected?.length > 0 && (
             <section className="mb-12">
-              <h2 className="mb-4 text-xl font-bold text-neutral-950">چه داده‌ای جمع می‌شود</h2>
+              <h2 className="mb-4 text-xl font-bold text-neutral-950">چه داده‌هایی جمع می‌شود</h2>
               <div className="overflow-x-auto rounded-lg border border-neutral-200">
                 <table className="w-full text-sm">
                   <thead className="bg-neutral-50 text-start text-neutral-600">
                     <tr>
-                      {['داده', 'هدف', 'مبنا', 'مدت نگهداشت'].map((h) => (
+                      {['داده', 'برای چه', 'مبنای قانونی', 'تا کی نگه داشته می‌شود'].map((h) => (
                         <th key={h} className="px-4 py-3 text-start font-medium">{h}</th>
                       ))}
                     </tr>
@@ -84,9 +84,9 @@ export default async function CompanyPage({ params }: { params: { slug: string }
             <h2 className="font-bold text-neutral-950">سطح</h2>
             <p className="mt-2 text-2xl font-bold text-neutral-950">{LEVEL_LABEL[c.level].fa}</p>
             <dl className="mt-3 space-y-1 text-neutral-600">
-              <div className="flex justify-between gap-2"><dt>اعطا</dt><dd dir="ltr">{c.level_granted ? faDigits(String(c.level_granted)) : '-'}</dd></div>
-              <div className="flex justify-between gap-2"><dt>انقضا</dt><dd dir="ltr">{c.level_expires ? faDigits(String(c.level_expires)) : '-'}</dd></div>
-              <div className="flex justify-between gap-2"><dt>اثبات دامنه</dt><dd dir="ltr" className="font-mono text-xs">{c.domain_proof}</dd></div>
+              <div className="flex justify-between gap-2"><dt>تاریخ اعطا</dt><dd dir="ltr">{c.level_granted ? faDigits(String(c.level_granted)) : '-'}</dd></div>
+              <div className="flex justify-between gap-2"><dt>معتبر تا</dt><dd dir="ltr">{c.level_expires ? faDigits(String(c.level_expires)) : '-'}</dd></div>
+              <div className="flex justify-between gap-2"><dt>روش اثبات دامنه</dt><dd dir="ltr" className="font-mono text-xs">{c.domain_proof}</dd></div>
             </dl>
           </div>
 
@@ -94,9 +94,9 @@ export default async function CompanyPage({ params }: { params: { slug: string }
             <div className="rounded-xl border border-neutral-200 p-5">
               <h2 className="font-bold text-neutral-950">خلاصه</h2>
               <dl className="mt-3 space-y-3 text-neutral-700">
-                <div><dt className="text-neutral-500">محل داده</dt><dd>{fm.data.data_location}</dd></div>
+                <div><dt className="text-neutral-500">داده‌ها کجا نگه داشته می‌شوند</dt><dd>{fm.data.data_location}</dd></div>
                 <div>
-                  <dt className="text-neutral-500">فروش یا اشتراک برای تبلیغات</dt>
+                  <dt className="text-neutral-500">فروش داده یا دادن آن برای تبلیغات</dt>
                   <dd>{fm.data.sells_or_shares_for_ads ? 'بله' : 'خیر'}</dd>
                 </div>
                 {fm.data.third_parties?.length > 0 && (
@@ -113,7 +113,7 @@ export default async function CompanyPage({ params }: { params: { slug: string }
                 )}
                 {fm.contact && (
                   <div>
-                    <dt className="text-neutral-500">تماس حریم خصوصی</dt>
+                    <dt className="text-neutral-500">مسئول حریم خصوصی</dt>
                     <dd>{fm.contact.privacy_owner}<br /><span dir="ltr">{fm.contact.email}</span></dd>
                   </div>
                 )}
@@ -139,7 +139,7 @@ export default async function CompanyPage({ params }: { params: { slug: string }
               <a className="text-accent hover:underline" href={`${REPO_URL}/commits/main/company-docs/${c.slug}`} target="_blank" rel="noopener noreferrer">
                 تاریخچهٔ کامل تغییرات
               </a>
-              <a className="text-accent hover:underline" href={`/companies/${c.slug}/feed.xml`}>خوراک Atom تغییرات</a>
+              <a className="text-accent hover:underline" href={`/companies/${c.slug}/feed.xml`}>دنبال کردن تغییرات (خوراک Atom)</a>
             </div>
           </div>
         </aside>

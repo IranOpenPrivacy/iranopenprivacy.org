@@ -72,6 +72,6 @@ export const LEVEL_LABEL: Record<Company['level'], { fa: string; en: string }> =
 export const CHANGE_LABEL: Record<string, string> = {
   initial: 'نسخهٔ اول',
   patch: 'اصلاح جزئی',
-  minor: 'افزوده یا شفاف‌سازی',
+  minor: 'افزودن یا روشن‌تر کردن',
   major: 'تغییر عمده',
 }

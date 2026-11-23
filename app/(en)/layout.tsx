@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import '@fontsource-variable/vazirmatn'
 import '../globals.css'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
@@ -17,6 +16,9 @@ export const metadata: Metadata = {
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" dir="ltr">
+      <head>
+        <link rel="preload" href="/fonts/DastkhatBar-Variable.woff2?v=1.210" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body>
         <SiteHeader lang="en" />
         <main id="main">{children}</main>

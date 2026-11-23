@@ -11,7 +11,7 @@ const NAV = {
     { href: '/levels/', label: 'سطح‌ها' },
     { href: '/process/', label: 'فرایند' },
     { href: '/companies/', label: 'شرکت‌ها' },
-    { href: '/governance/', label: 'حاکمیت' },
+    { href: '/governance/', label: 'شیوهٔ اداره' },
     { href: '/contribute/', label: 'مشارکت' },
     { href: '/faq/', label: 'پرسش‌ها' },
   ],
