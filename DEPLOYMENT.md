@@ -2,7 +2,7 @@
 
 ## Production (Vercel)
 
-- Vercel project linked to `IranOpenPrivacy/website`, production branch `main`.
+- Vercel project linked to `IranOpenPrivacy/iranopenprivacy.org`, production branch `main`.
 - Framework preset: Next.js. Build command `npm run build` (runs `prebuild`, which fetches the docs repo). Output: static export in `out/`.
 - Domain: `iranopenprivacy.org` (DNS on Cloudflare). `www` should redirect to the apex.
 - Old v1 URLs (`/about`, `/framework`, `/community`) redirect via `vercel.json`.
