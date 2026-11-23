@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/about", "destination": "/manifesto/", "permanent": true },
+    { "source": "/about/", "destination": "/manifesto/", "permanent": true },
+    { "source": "/framework", "destination": "/standard/", "permanent": true },
+    { "source": "/framework/", "destination": "/standard/", "permanent": true },
+    { "source": "/community", "destination": "/contribute/", "permanent": true },
+    { "source": "/community/", "destination": "/contribute/", "permanent": true }
+  ]
+}

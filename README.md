@@ -1,67 +1,40 @@
-# Iran Open Privacy (IOP) Website
+# iranopenprivacy.org
 
-وب‌سایت رسمی پروژه Iran Open Privacy (IOP) — استاندارد باز و بی‌طرف حریم خصوصی در ایران
+The website for [Iran Open Privacy (IOP)](https://iranopenprivacy.org): an open privacy standard and verification program for Iranian digital products.
 
-## ویژگی‌ها
+This repo holds **only the site**. All content (standard, checklist, docs, company privacy documents) lives in [IranOpenPrivacy/iran-open-privacy](https://github.com/IranOpenPrivacy/iran-open-privacy) and is pulled in at build time. To change what the site says, edit that repo.
 
-- طراحی مینیمال و حرفه‌ای (سیاه و سفید با آکسان آبی)
-- پشتیبانی کامل از RTL (راست به چپ)
-- فونت فارسی Vazirmatn
-- کاملاً واکنش‌گرا (Responsive)
-- ساخته شده با Next.js و TailwindCSS
+## How it works
 
-## نصب و راه‌اندازی
+- `scripts/fetch-content.mjs` clones the docs repo (`main`) into `./content` before every build.
+- Next.js 14 (App Router) reads Markdown and YAML from `./content` and renders a **fully static** site to `out/` (`output: 'export'`), so it can be mirrored on any static host.
+- Persian is the main site (`/`, RTL). English summary lives under `/en/`.
+
+| Route | Source in the docs repo |
+| --- | --- |
+| `/` | hand-written home, numbers from `checklist/*.yaml` |
+| `/standard/`, `/en/standard/` | `checklist/*.yaml` (filterable) |
+| `/manifesto/`, `/levels/`, `/process/`, ... | `docs/fa/*.md`, see `DOC_PAGES` in `lib/content.ts` |
+| `/companies/`, `/companies/<slug>/` | `company-docs/<slug>/` (+ Atom feed at `feed.xml`) |
+| `/contribute/`, `/security/`, `/licenses/`, ... | root Markdown files |
+| `/en/` | `README.en.md`, `docs/en/overview.md` |
+
+Relative links between docs are rewritten to site routes; links to files without a page go to GitHub.
+
+## Develop
 
 ```bash
-# نصب وابستگی‌ها
 npm install
-
-# اجرای پروژه در حالت توسعه
+echo "IOP_CONTENT_DIR=../iran-open-privacy" > .env.local   # optional: use a local docs checkout
 npm run dev
-
-# ساخت نسخه تولید
-npm run build
-
-# اجرای نسخه تولید
-npm start
 ```
 
-پس از اجرای `npm run dev`، وب‌سایت در آدرس [http://localhost:3000](http://localhost:3000) در دسترس خواهد بود.
+Without `.env.local`, the docs repo is cloned into `./content`.
 
-## ساختار پروژه
+## Deploy
 
-```
-/
-├── app/              # صفحات Next.js
-│   ├── page.tsx      # صفحه اصلی
-│   ├── about/        # صفحه درباره
-│   ├── framework/    # صفحه چارچوب
-│   ├── governance/   # صفحه حکمرانی
-│   ├── community/    # صفحه جامعه
-│   └── contact/      # صفحه تماس
-├── components/       # کامپوننت‌های قابل استفاده مجدد
-│   ├── Header.tsx    # هدر
-│   └── Footer.tsx    # فوتر
-└── public/           # فایل‌های استاتیک
-```
+Hosted on Vercel (project linked to this repo, domain `iranopenprivacy.org`). Every push to `main` here deploys. Pushes to `main` in the docs repo trigger a rebuild through a Vercel deploy hook (see `DEPLOYMENT.md`).
 
-## صفحات
+## License
 
-- **خانه**: معرفی IOP و اهداف پروژه
-- **درباره**: مانیفست، اهداف و اصول IOP
-- **چارچوب**: معرفی و دانلود چارچوب IOP v0.1
-- **حکمرانی**: مدل حکمرانی باز و کمیته‌ها
-- **جامعه**: راهنمای مشارکت در پروژه
-- **تماس**: فرم تماس و اطلاعات ارتباطی
-
-## تکنولوژی‌ها
-
-- **Next.js 14**: فریمورک React
-- **TypeScript**: تایپ‌ایمنی
-- **TailwindCSS**: استایل‌دهی
-- **Vazirmatn**: فونت فارسی
-
-## مجوز
-
-این پروژه تحت مجوز باز منتشر شده است.
-
+Code: AGPL-3.0. Content: see the docs repo.

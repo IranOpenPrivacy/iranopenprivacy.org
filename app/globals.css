@@ -3,11 +3,26 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-gray-50 text-black;
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
-    background-size: 20px 20px;
-  }
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-white text-neutral-900 antialiased; font-feature-settings: "ss01"; }
+  ::selection { @apply bg-accent-soft; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-accent; }
 }
 
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-[15px] font-medium transition-colors; }
+  .btn-primary { @apply btn bg-accent text-white hover:bg-accent-ink; }
+  .btn-ghost { @apply btn border border-neutral-300 text-neutral-900 hover:border-neutral-900; }
+  .chip { @apply inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium leading-5 whitespace-nowrap; }
+
+  /* Rendered Markdown from the docs repository */
+  .doc { @apply prose prose-neutral max-w-none prose-headings:font-bold prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-code:before:content-none prose-code:after:content-none prose-code:rounded prose-code:bg-neutral-100 prose-code:px-1 prose-code:py-0.5 prose-code:font-normal prose-blockquote:border-accent prose-blockquote:not-italic prose-blockquote:font-normal prose-th:text-start prose-li:my-1; line-height: 1.95; }
+  .doc :where(h2, h3) { scroll-margin-top: 5rem; }
+  .doc table { @apply block overflow-x-auto text-sm; }
+  .doc :where(thead th) { @apply bg-neutral-50 px-3 py-2; }
+  .doc :where(tbody td) { @apply px-3 py-2 align-top; }
+  .doc pre { @apply bg-neutral-900 text-neutral-100; direction: ltr; text-align: left; }
+  [dir="rtl"] .doc blockquote { @apply border-s-4 border-l-0 ps-4; }
+  [dir="rtl"] .doc :where(ul, ol) { @apply pe-0 ps-6; }
+}
